@@ -29,10 +29,12 @@ Executive summary:"""
 )
 
 
-def summarize_chunks(chunks, tracker):
+def summarize_chunks(chunks, tracker, progress=None):
     summaries = []
     for i, chunk in enumerate(chunks, start=1):
         print(f"Summarizing chunk {i}/{len(chunks)}...")
+        if progress:
+            progress(0.1 + 0.5 * (i - 1) / len(chunks), f"Summarizing chunk {i}/{len(chunks)}...")
         summaries.append(run_step(f"chunk_summary_{i}", CHUNK_PROMPT, {"chunk": chunk}, tracker))
     return summaries
 

@@ -1,0 +1,1 @@
+The team decided to launch on November 15th. Rahul will finalize the release notes by Friday. Anita raised a risk that the unstable payment API could delay the launch, and Rahul will check with the vendor tomorrow.

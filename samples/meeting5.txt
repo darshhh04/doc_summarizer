@@ -1,0 +1,7 @@
+Imran: Let's check the project status. The backend is 80 percent done.
+Pooja: The frontend is behind schedule by one week.
+Imran: We will extend the frontend deadline to December 5th.
+Pooja: I need one more developer to catch up.
+Imran: I'll ask HR for a contract developer this week.
+Tanvi: Testing cannot start until the frontend is ready, so the release may slip.
+Imran: Tanvi, prepare the test plan by next Friday.

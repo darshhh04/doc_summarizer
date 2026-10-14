@@ -30,8 +30,12 @@ class TokenTracker:
             "output_tokens": sum(c["output_tokens"] for c in self.calls),
             "estimated_cost_usd": round(sum(c["cost_usd"] for c in self.calls), 6),
         }
+    
 
     def save(self, path="logs/token_log.csv"):
+
+        if not self.calls:
+            return
         
         os.makedirs(os.path.dirname(path), exist_ok=True)
         new_file = not os.path.exists(path)

@@ -1,0 +1,7 @@
+Sonal: We have three candidates for the backend role.
+Vikram: Candidate B performed best in the coding test.
+Sonal: Let's make an offer to Candidate B.
+Vikram: I will send the offer letter by Tuesday.
+Ravi: The budget for this role is tight. Candidate B asked for a higher salary.
+Sonal: Ravi, please check with finance and confirm by Monday.
+Vikram: If finance says no, we may lose the candidate.

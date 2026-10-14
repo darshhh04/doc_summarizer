@@ -1,0 +1,1 @@
+The backend is 80 percent done but the frontend is one week behind, so the frontend deadline was extended to December 5th. Imran will ask HR for a contract developer this week and Tanvi will prepare the test plan by next Friday. The release may slip because testing cannot start until the frontend is ready.

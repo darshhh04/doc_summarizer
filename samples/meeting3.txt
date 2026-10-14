@@ -1,0 +1,7 @@
+Arjun: The login bug is affecting 10 percent of users.
+Divya: I found the cause. It is a session timeout problem.
+Arjun: Great. Divya, please push the fix by Wednesday.
+Meera: We need to test it on mobile before release.
+Arjun: Meera, run mobile testing on Thursday.
+Divya: Risk: if the fix touches the payment flow, we need a security review.
+Arjun: Decision: we will release the fix on Friday if testing passes.

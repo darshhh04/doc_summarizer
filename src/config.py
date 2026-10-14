@@ -14,4 +14,5 @@ def get_llm():
         model=os.getenv("GEMINI_MODEL", "gemini-3.5-flash"),
         temperature=0,              
         google_api_key=api_key,
+        thinking_budget=0, 
     )

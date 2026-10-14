@@ -1,0 +1,1 @@
+A login bug affecting 10 percent of users was traced to a session timeout problem. Divya will push the fix by Wednesday, Meera will run mobile testing on Thursday, and the fix will be released on Friday if testing passes. A security review is needed if the fix touches the payment flow.
