@@ -29,3 +29,20 @@ class MeetingResult(BaseModel):
     action_items: List[ActionItem] = []
     risks: List[Risk] = []
     topics: List[Topic] = []
+
+
+
+class DecisionList(BaseModel):
+    decisions: List[Decision] = []
+
+
+class ActionItemList(BaseModel):
+    action_items: List[ActionItem] = []
+
+
+class RiskList(BaseModel):
+    risks: List[Risk] = []
+
+
+class TopicList(BaseModel):
+    topics: List[Topic] = []

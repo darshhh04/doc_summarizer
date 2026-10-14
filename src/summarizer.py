@@ -1,14 +1,14 @@
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 
-from src.config import get_llm
 from src.chunking import split_into_chunks
+from src.llm_utils import run_step
 
 
 CHUNK_PROMPT = ChatPromptTemplate.from_template(
     """You are summarizing one part of a meeting transcript.
-Write a short summary (4-6 sentences). Keep speaker names.
-Mention decisions, tasks and problems if present. Do not invent facts.
+Write a summary of 6-8 sentences. Keep speaker names.
+Always keep: decisions (and who made them), tasks (owner and deadline),
+and problems or risks. Do not invent facts.
 
 Transcript part:
 {chunk}
@@ -29,29 +29,14 @@ Executive summary:"""
 )
 
 
-def summarize_chunks(chunks: list[str]) -> list[str]:
-    chain = CHUNK_PROMPT | get_llm() | StrOutputParser()
+def summarize_chunks(chunks, tracker):
     summaries = []
     for i, chunk in enumerate(chunks, start=1):
         print(f"Summarizing chunk {i}/{len(chunks)}...")
-        summaries.append(chain.invoke({"chunk": chunk}))
+        summaries.append(run_step(f"chunk_summary_{i}", CHUNK_PROMPT, {"chunk": chunk}, tracker))
     return summaries
 
 
-def merge_summaries(summaries: list[str]) -> str:
-    chain = MERGE_PROMPT | get_llm() | StrOutputParser()
+def merge_summaries(summaries, tracker):
     joined = "\n\n".join(f"Part {i}: {s}" for i, s in enumerate(summaries, start=1))
-    return chain.invoke({"summaries": joined})
-
-
-def create_executive_summary(text: str) -> str:
-    chunks = split_into_chunks(text)
-    summaries = summarize_chunks(chunks)
-    return merge_summaries(summaries)
-
-
-if __name__ == "__main__":
-  
-    with open("samples/meeting1.txt", encoding="utf-8") as f:
-        text = f.read()
-    print(create_executive_summary(text))
+    return run_step("global_summary", MERGE_PROMPT, {"summaries": joined}, tracker)
