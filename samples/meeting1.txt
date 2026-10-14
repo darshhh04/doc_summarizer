@@ -1,0 +1,6 @@
+Priya: Welcome everyone. Today we decide the launch date.
+Rahul: I think we should launch on November 15th.
+Priya: Agreed. Let's go with November 15th. Rahul, please finalize the
+release notes by Friday.
+Anita: One concern, the payment API is still unstable. It could delay us.
+Rahul: I'll check with the vendor tomorrow. 
